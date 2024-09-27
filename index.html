@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebración de Cumpleaños</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Globos animados flotando -->
+    <div class="balloon" style="left: 10%; background-color: red; animation-duration: 6s;"></div>
+    <div class="balloon" style="left: 30%; background-color: blue; animation-duration: 7s;"></div>
+    <div class="balloon" style="left: 50%; background-color: green; animation-duration: 5s;"></div>
+    <div class="balloon" style="left: 70%; background-color: yellow; animation-duration: 8s;"></div>
+    <div class="balloon" style="left: 90%; background-color: pink; animation-duration: 4s;"></div>
+
+    <!-- Tarjeta de mensaje de cumpleaños -->
+    <div class="card">
+        <h1>🎂 ¡Feliz Cumpleaños! 🎂</h1>
+        <p>Hoy es un día especial, ¡y quiero que lo sepas!</p>
+        <p>Que este nuevo año de vida te traiga alegría, amor y muchas aventuras.</p>
+        <p>Espero que recuerdes este día por el resto de tu vida, diviértete como un niño y disfruta como un rey.</p>
+        <p>¡FELICIDADES!</p>
+        <!-- Botón de celebración -->
+        <a href="#" class="button" id="celebrateButton">🎉 ¡Haz clic para celebrar! 🎈</a>
+    </div>
+
+    <!-- Contenedor de confetti -->
+    <div id="confetti" class="confetti"></div>
+
+    <!-- Archivo de sonido -->
+    <audio id="birthdaySound" preload="auto">
+        <source src="happy.wav" type="audio/mp3">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <!-- Script de JS -->
+    <script src="script.js"></script>
+</body>
+</html>

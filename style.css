@@ -1,0 +1,120 @@
+/* Reseteo básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Configuración del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #a1c8e9); /* Gradiente azul */
+    overflow: hidden; /* Evitar scroll por el confetti */
+}
+
+/* Estilo de la tarjeta */
+.card {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1; /* Asegurarse de que la tarjeta esté delante */
+}
+
+.card h1 {
+    color: #0056b3;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Agregar animación al botón */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0056b3; /* Naranja brillante */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: shake 1s ease-in-out infinite; /* Agregar animación de movimiento */
+}
+
+.button:hover {
+    background-color: rgb(107, 155, 206); /* Más oscuro al pasar el mouse */
+    transform: scale(1.1); /* Ampliar un poco */
+}
+
+/* Animación de sacudida */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px); /* Moverse a la izquierda */
+    }
+    50% {
+        transform: translateX(5px); /* Moverse a la derecha */
+    }
+    75% {
+        transform: translateX(-5px); /* Moverse a la izquierda */
+    }
+}
+
+/* Contenedor del confetti */
+.confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* No interactuar con el confetti */
+    display: none; /* Oculto inicialmente */
+}
+
+.confetti div {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    opacity: 0.7;
+    animation: fall 1.5s linear forwards;
+}
+
+/* Animaciones */
+@keyframes fall {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100vh); }
+}
+
+/* Estilo de los globos */
+.balloon {
+    position: absolute;
+    width: 50px;
+    height: 70px;
+    border-radius: 50% 50% 45% 45%; /* Forma de globo */
+    box-shadow: inset -10px -10px rgba(0, 0, 0, 0.1);
+    animation: floatBalloon linear infinite;
+    bottom: -80px; /* Inicia fuera de la pantalla */
+}
+
+/* Animaciones de los globos */
+@keyframes floatBalloon {
+    0% {
+        transform: translateY(0) rotate(-2deg);
+        bottom: -80px; /* Inicia fuera de la pantalla */
+    }
+    100% {
+        transform: translateY(-100vh) rotate(2deg); /* Flota hacia arriba */
+    }
+}
